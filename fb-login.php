@@ -5,16 +5,10 @@ require_once ("conf.php");
 if(!session_id()) {
     session_start();
 }
-
-
-/*
 if (isset($_SESSION['fb_access_token'])) {
-        header('Location: fb-callback.php');
+        header('Location: index.php');
         exit();
     }
-  */  
-
-
 
 $permissions = ['email']; // Optional permissions
 $loginUrl = $helper->getLoginUrl('http://localhost:8080/OAuth/fb-callback.php', $permissions);
@@ -48,14 +42,14 @@ $loginUrl = $helper->getLoginUrl('http://localhost:8080/OAuth/fb-callback.php', 
     	<input type="text" name="user" placeholder="Username" />
 		<input type="password" name="pass" placeholder="Password"/>
 		<input type="hidden" name="user_csrf" id="IdOfToken" value="<?php echo $token ?>" /> 
-        <button type="submit" name="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+        <button type="submit" name="submit" class="btn btn-primary btn-block btn-large">Login</button>
         
-        <button type="button" name="login_fb" onclick="window.location = '<?php echo $loginUrl ?>';" class="btn btn-primary btn-block btn-large" style="margin-top: 10px">Login with Facebook</button>
+        <button type="button" name="login_fb" onclick="window.location = '<?php echo $loginUrl ?>';" class="btn btn-primary btn-block btn-large" style="margin-top: 10px;background: #e84118">Login with Facebook</button>
         
 
     </form>
 
-    <p style="text-align:center;color: #95afc0">Done by <a href="#">Kishanth - IT16062016</a></p>
+    <p style="text-align:center;color: #95afc0">Done by <a href="https://github.com/kishanthbelic/SSS-Assignment_3.git">Kishanth - IT16062016</a></p>
 </div>
 
 </body>
